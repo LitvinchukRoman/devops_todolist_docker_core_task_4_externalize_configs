@@ -11,7 +11,13 @@ FROM python:${PYTHON_VERSION} as run
 
 WORKDIR /app
 
-ENV PYTHONUNBUFFERED=1
+ENV PYTHONUNBUFFERED=1 \
+    ENGINE=default \
+    NAME=default \
+    USER=default \
+    PASSWORD=default \
+    HOST=default \
+    PORT=default
 
 COPY --from=builder /app .
 
